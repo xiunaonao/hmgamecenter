@@ -18,6 +18,7 @@ router.get('/editor', (req, res, next) =>{
 
 router.get('/show', (req, res, next)=>{
 	let id=req.query.id;
+	
 	database.query('formInfo',{id:parseInt(id)},(err,result)=>{
 		console.log(err);
 		console.log(result);
