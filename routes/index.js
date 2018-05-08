@@ -16,4 +16,12 @@ router.get('/room', function(req,res,next){
 	res.render('chess/room',{title: 'chess'});
 })
 
+router.get('/roomList', function(req,res,next){
+	res.render('chess/roomList',{title:'chess'});
+})
+
+router.get('/chessboard', function(req,res,next){
+	res.render('chess/chessboard',{title:'chess'});
+})
+
 module.exports = router;

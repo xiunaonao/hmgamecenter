@@ -1,0 +1,299 @@
+extends ../layout
+block content
+	script(src='/js/chess.js')
+
+	style.
+		*{
+			margin:0;
+			padding:0;
+		}
+		a{
+			text-decoration:none;
+		}
+		li{
+			list-style:none;
+		}
+		html,body{
+			height:100%;
+		}
+		.content_box{
+			min-height:100%;
+			padding:0 0.25rem;
+			background:url(/img/背景.jpg);
+		}
+
+		.top{
+			width:100%;
+			padding-top:0.25rem;
+		}
+		.top:after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+		.top_a{
+			width:0.3rem;
+			height:0.3rem;
+			float:left;
+		}
+		.back_img{
+			display:block;
+			width:100%;
+		}
+		.top_center{
+			height:0.3rem;
+			text-align:center;
+			line-height:0.3rem;
+			font-size:0.13rem;
+			font-family:'Microsoft YaHei';
+			color:#E8BC7D;
+		}
+
+		.room_list{
+			width:100%;
+			padding-top:0.25rem;
+		}
+		.room_row{
+			width:100%;
+			margin-bottom:0.51rem;
+		}
+		.room_row:after{
+			content:'';
+			display:table;
+			clear:both;
+		}
+		.room_left{
+			display:block;
+			width:1.3rem;
+			float:left;
+		}
+		.room_right{
+			display:block;
+			width:1.3rem;
+			float:right;
+		}
+		.room_left dl,
+		.room_right dl{
+			width:100%;
+		}
+		.room_left dt,
+		.room_right dt{
+			width:100%;
+			height:0.94rem;
+			position:relative;
+			top:0;
+		}
+		.room_left .dt_left,
+		.room_right .dt_left{
+			width:0.45rem;
+			height:0.45rem;
+			position:absolute;
+			left:0;
+			top:0.24rem;
+			z-index:99;
+		}
+		.room_left .dt_right,
+		.room_right .dt_right{
+			width:0.45rem;
+			height:0.45rem;
+			position:absolute;
+			right:0;
+			top:0.24rem;
+			z-index:99;
+		}
+		.room_left .dt_center,
+		.room_right .dt_center{
+			width:0.85rem;
+			height:0.94rem;
+			position:absolute;
+			left:0;
+			right:0;
+			top:0;
+			margin:auto;
+		}
+		.room_left dd,
+		.room_right dd{
+			width:100%;
+			margin-top:0.11rem;
+			display:table;
+			position:relative;
+		}
+		.room_left dd span,
+		.room_right dd span{
+			display:table-cell;
+			width:50%;
+			font-size:0.11rem;
+			font-family:'Microsoft YaHei';
+			color:#ffffff;
+		}
+		.room_left .player_r,
+		.room_right .player_r{
+			text-align:right;
+		}
+		.room_left .room_num,
+		.room_right .room_num{
+			width:0.35rem;
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			margin:auto;
+			background:url(/img/首页/圆角矩形.png);
+			background-size:100% 100%;
+			text-align:center;
+			font-size:0.1rem;
+			font-family:'Microsoft YaHei';
+			color:#ffffff;
+		}
+
+		.bottom_page{
+			width:1.1rem;
+			margin:0 auto;
+			padding-bottom:0.2rem;
+			position:relative;
+		}
+		.bottom_page:after{
+			content:'';
+			display:table;
+			clear:both;
+		}
+		.page_pre{
+			display:block;
+			width:0.25rem;
+			float:left;
+		}
+		.page_next{
+			display:block;
+			width:0.25rem;
+			float:right;
+		}
+		.page_pre img,
+		.page_next img{
+			display:block;
+			width:100%;
+		}
+		.page_num{
+			width:0.5rem;
+			height:0.25rem;
+			margin:0 auto;
+			background:url(/img/房间列表/房间页数.png);
+			background-size:100% 100%;
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			line-height:0.25rem;
+			text-align:center;
+			font-size:0.1rem;
+			font-family:'Microsoft YaHei';
+			color:#E8BC7D;
+		}
+		.page_num span{
+			text-align:center;
+			font-size:0.1rem;
+			font-family:'Microsoft YaHei';
+			color:#E8BC7D;
+		}
+
+
+	div.content_box
+		div.top
+			a.top_a(onclick='history.go(-1);')
+				img.back_img(src='/img/房间列表/back.png')
+			p.top_center 请选择空余位置开始游戏
+
+		ul.room_list
+			li.room_row
+				a.room_left(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 张晓明
+							span.room_num 1
+							span.player_r 子不语
+				
+				a.room_right(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 一二三...
+							span.room_num 2
+							span.player_r juffry
+			li.room_row
+				a.room_left(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 张晓明
+							span.room_num 1
+							span.player_r 子不语
+				
+				a.room_right(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 一二三...
+							span.room_num 2
+							span.player_r juffry
+			li.room_row
+				a.room_left(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 张晓明
+							span.room_num 1
+							span.player_r 子不语
+				
+				a.room_right(href='chessboard')
+					dl
+						dt
+							img.dt_left(src='/img/test_icon.png')
+							img.dt_center(src='/img/房间列表/房间列表-棋盘.jpg')
+							img.dt_right(src='/img/test_icon.png')
+						dd
+							span.player_l 一二三...
+							span.room_num 2
+							span.player_r juffry
+
+		div.bottom_page
+			a.page_pre
+				img(src='/img/房间列表/上一页.png')
+			p.page_num
+				span.now_page 1
+				span.total_page /10
+			a.page_next
+				img(src='/img/房间列表/下一页.png')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
