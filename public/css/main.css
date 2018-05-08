@@ -11,3 +11,5 @@ button,input[text],input[button],select{-webkit-appearance:none;}
 header{
 	text-align: center;	line-height: 0.45rem;font-size:0.16rem;border-bottom:0.01rem solid #CCC;
 }
+
+.hm-alert-success{position:fixed;width:1.5rem;height:0.5rem;line-height:0.5rem;font-size:0.16rem;text-align:center;color:#fff;background:rgba(0,0,0,0.5);left:50%;top:50%;-webkit-transform:translate(-50%,-50%);}
