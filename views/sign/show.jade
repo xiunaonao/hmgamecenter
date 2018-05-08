@@ -1,0 +1,21 @@
+extends ../signLayout
+
+block content
+	article#sign.sign-editor
+		.sign-show-banner
+			img(v-if="sysid==1",src="/img/signEditor/zyz.png")
+		section(v-for="obj in signForm",v-bind:class='["section-type-"+obj.type]')
+			input.sign-txt(v-if="obj.type==1",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name",v-model:value="obj.value")
+			textarea.sign-area(v-if="obj.type==2",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name",v-model:value="obj.value")
+			select.sign-select(v-if="obj.type==3",v-bind:placeholder="obj.context",v-model="obj.value")
+				option(disabled,value="",checked="checked",v-bind:value="obj.value") 请选择{{obj.name}}
+				option(v-for="opt,i in obj.option.split(',')",v-bind:value="opt") {{opt}}
+
+			.valid-code(v-if="obj.type==20")
+				input(type="text",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name")
+				button(v-on:click="postCode()") 发送验证码
+		button.form-submit(v-on:click="submitForm()") 提交信息
+
+block footer
+	script var signData=JSON.parse('!{JSON.stringify(data)}');
+	script(src="/js/signShow.js")

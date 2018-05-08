@@ -18,8 +18,6 @@ var chess={template:`
 };
 
 
-var 
-
 
 
 
