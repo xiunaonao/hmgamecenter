@@ -8,10 +8,13 @@
 .sign-editor>section>textarea{resize:none;height:1.5rem;box-sizing:border-box;padding:0.1rem 0.15rem;text-indent:0;}
 .sign-editor>section>.input-type-1{border-radius:0.05rem;}
 
-.sign-editor>section>.valid-code>button{height:0.4rem;border:0.01rem solid #FF4500;color:#FFF;width:1rem;position:absolute;top:0;right:0;background:#FF4500;border-radius:0.05rem;}
+.sign-editor>section>.valid-code>button{height:0.4rem;border:0.01rem solid #008BCB;color:#FFF;width:1rem;position:absolute;top:0;right:0;background:#008BCB;border-radius:0.05rem;}
 
-.form-submit{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;border:0.01rem #FF4500 solid ;background:#FF4500;border-radius:0.05rem;color:#FFF;}
+.form-submit{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;border:0.01rem #008BCB solid ;background:#008BCB;border-radius:0.05rem;color:#FFF;}
 
 .sign-data>ul{width:12rem;}
 .sign-data>ul>li{height:0.4rem;line-height:0.4rem;}
 .sign-data>ul>li span{width:0.5rem;text-indent:0.1rem;}
+
+.sign-show-banner{width:3.75rem;}
+.sign-show-banner img{width:100%;}
