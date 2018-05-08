@@ -2,6 +2,8 @@
   padding: 0px;margin:0;
 }
 
+button,input[text],input[button],select{-webkit-appearance:none;}
+
 * {
   color: #333;font-size:0.14rem;
 }

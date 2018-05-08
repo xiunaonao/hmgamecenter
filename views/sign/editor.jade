@@ -1,0 +1,14 @@
+extends ../signLayout
+
+block content
+	article#sign.sign-editor
+		section(v-for="obj in signForm")
+			aside
+				a.sign-del 删除
+				a.sign-edt 编辑
+			input.sign-txt(v-bind:placeholder="obj.context?obj.context:'未设置，点击编辑按钮进行编辑'")
+		button.add-signform(v-on:click="signForm.push({})") +添加新项
+
+
+block footer
+	script(src="/js/signEditor.js")

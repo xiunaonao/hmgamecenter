@@ -1,0 +1,13 @@
+extends ../signLayout
+
+block content
+	article#sign.sign-data
+		ul
+			li(v-if(signData.length>0))
+				span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(signData[0])") {{obj2}}
+			li(v-for="obj in signData")
+				span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(obj.rows)") {{obj.rows[obj2]}}
+	
+block footer
+	script var sysid=!{id};var signData=JSON.parse('!{JSON.stringify(data)}');
+	script(src="/js/signData.js")

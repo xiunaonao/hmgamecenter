@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport",content="width=device-width")
+    link(rel="stylesheet",href="/css/main.css")
+    link(rel="stylesheet",href="/css/sign.css")
+    script(src="/js/vue.js")
+    script(src="/js/vue-resource.js")
+    script.
+        const deviceWidth = document.documentElement.clientWidth;
+        const deviceFontSize = (deviceWidth / 375) * 100;
+        document.querySelector("html").style.fontSize = deviceFontSize + 'px';
+  body
+
+    header=title
+    block content
+
+    block footer

@@ -1,0 +1,28 @@
+{
+	_id:ObjectId("5af128c27c055cdfac589f78"),
+	id:1,
+	rows:[
+		{"name":"姓名","context":"","type":1,notnull:1},
+		{"name":"性别","context":"","type":3,notnull:1,option:'男,女'},
+		{"name":"联系方式","context":"","type":1,notnull:1,option:''},
+		{"name":"验证码","context":"","type":20,notnull:1,option:''},
+		{"name":"出生日期","context":"","type":1,notnull:1,option:''},
+		{"name":"政治面貌","context":"","type":1,notnull:1,option:''},
+		{"name":"民族","context":"","type":1,notnull:1,option:''},
+		{"name":"籍贯","context":"","type":1,notnull:1,option:''},
+		{"name":"入校时间","context":"","type":1,notnull:1,option:''},
+		{"name":"专业","context":"","type":1,notnull:1,option:''},
+		{"name":"最高学历","context":"","type":1,notnull:1,option:''},
+		{"name":"工作单位及部门","context":"","type":1,notnull:1,option:''},
+		{"name":"现任职务","context":"","type":1,notnull:1,option:''},
+		{"name":"拟应聘岗位","context":"","type":1,notnull:1,option:''},
+		{"name":"第二应聘岗位","context":"","type":1,notnull:1,option:''},
+		{"name":"是否服从组织安排","context":"","type":1,notnull:1,option:''},
+
+		{"name":"学习及工作简历","context":"（从本校学习经历填起，按时间顺序分条填写，工作经历内容包括所在公司、部门、职务，每段经历前后时间要相互衔接）","type":2,notnull:1,option:''},
+		{"name":"自我评价","context":"（针对报名岗位，阐述自我特点和胜任能力）","type":2,notnull:1,option:''}
+	],
+	title:"校友会志愿者报名表",
+	remark:"",
+	src:""
+}
