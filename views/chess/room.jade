@@ -1,0 +1,109 @@
+extends ../layout
+block content
+	script(src='/js/chess.js')
+
+	style.
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			height:100%;
+		}
+		.content_box{
+			min-height:100%;
+			padding:0 0.25rem;
+			background:url(/img/背景.jpg);
+		}
+
+		.top{
+			width:100%;
+			padding-top:0.25rem;
+		}
+		.top:after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+		.top_a{
+			width:0.3rem;
+			height:0.3rem;
+			float:left;
+		}
+		.back_img{
+			display:block;
+			width:100%;
+		}
+
+		.fight_img{
+			display:block;
+			width:0.6rem;
+			height:0.2rem;
+			margin:0.18rem auto 0.18rem;
+		}
+
+		.fight_list{
+			width:100%;
+		}
+		.fight_list li{
+			width:100%;
+			margin-bottom:0.18rem;
+		}
+		.fight_list li a{
+			width:100%;
+		}
+		.fight_list li a .f_list_img{
+			display:block;
+			width:100%;
+		}
+
+		.match_img{
+			display:block;
+			width:0.6rem;
+			height:0.2rem;
+			margin:0 auto 0.18rem;
+		}
+
+		.match_list{
+			width:100%;
+		}
+		.match_list li{
+			width:100%;
+			padding-bottom:0.18rem;
+		}
+		.match_list li a{
+			width:100%;
+		}
+		.match_list li a .m_list_img{
+			display:block;
+			width:100%;
+		}
+
+
+	div.content_box
+		div.top
+			a.top_a(onclick='history.go(-1);')
+				img.back_img(src='/img/房间列表/back.png')
+
+		img.fight_img(src='/img/房间列表/-s-对战.png')
+
+		ul.fight_list
+			li
+				a(href='#')
+					img.f_list_img(src='/img/房间列表/房间1.png')
+			li
+				a(href='#')
+					img.f_list_img(src='/img/房间列表/房间2.png')
+			li
+				a(href='#')
+					img.f_list_img(src='/img/房间列表/房间3.png')
+			li
+				a(href='#')
+					img.f_list_img(src='/img/房间列表/房间4.png')
+
+		img.match_img(src='/img/房间列表/-s-比赛场.png')
+
+		ul.match_list
+			li
+				a
+					img.m_list_img(src='/img/房间列表/比赛房间.png')

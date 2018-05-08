@@ -1,4 +1,108 @@
 extends ../layout
-
 block content
- header 中国象棋
+	script(src='/js/chess.js')
+
+	style.
+		*{
+			margin:0;
+			padding:0;
+		}
+		html,body{
+			height:100%;
+		}
+		.content_box{
+			min-height:100%;
+			padding:0 0.25rem;
+			background:url(/img/背景.jpg);
+		}
+		.top{
+			padding-top:0.25rem;
+		}
+		.top:after{
+			content:'';
+			display:table;
+			clear:both;
+		}
+		.top_img{
+			display:block;
+			float:left;
+			width:0.4rem;
+			border-radius:50%;
+		}
+		.top_hi{
+			width:1.3rem;
+			margin-left:0.15rem;
+			float:left;
+			font-size:0.15rem;
+			font-family:'Microsoft YaHei';
+			color:#ffffff;
+		}
+		.hi_down{
+			font-size:0.1rem;
+			color:#E8BC7D;
+		}
+		.top_right{
+			width:0.9rem;
+			height:0.25rem;
+			float:right;
+			margin-top:0.05rem;
+			background:url(/img/首页/圆角矩形.png);
+			background-size:cover;
+			text-align:center;
+			line-height:0.25rem;
+			font-size:0.1rem;
+			font-family:'Microsoft YaHei';
+			color:#E8BC7D;
+		}
+
+		.main{
+			width:92%;
+			margin:0.27rem auto;
+			padding:0.13rem 0.13rem 0.17rem;
+			background:url(/img/首页/-s-框底.png);
+			background-size:cover;
+		}
+		.main_center{
+			width:100%;
+			background:url(/img/首页/海报1.jpg);
+			background-size:cover;
+		}
+		.main_img{
+			display:block;
+			width:100%;
+		}
+
+		.bottom_text{
+			display:block;
+			width:100%;
+		}
+
+		.bottom_a{
+			display:block;
+			width:100%;
+			margin-top:0.27rem;
+			padding-bottom:0.3rem;
+		}
+		.bottom_img{
+			display:block;
+			width:100%;
+		}
+
+	div.content_box
+		div.top
+			img.top_img(src='/img/test_icon.png')
+			p.top_hi Hi,
+				span.hi_name 张晓明
+				br
+				span.hi_down 欢迎来到中国象棋！
+			p.top_right 胜率 100%
+
+		div.main
+			div.main_center
+				img.main_img(src='/img/首页/框.png')
+
+		img.bottom_text(src='/img/首页/bottom_text.png')
+
+		a.bottom_a(href='room')
+			img.bottom_img(src='/img/首页/进入游戏.png')
+

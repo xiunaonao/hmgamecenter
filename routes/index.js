@@ -8,5 +8,12 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/chess', function(req,res,next){
+	res.render('chess/index',{title: 'chess'});
+})
+
+router.get('/room', function(req,res,next){
+	res.render('chess/room',{title: 'chess'});
+})
 
 module.exports = router;
