@@ -6,7 +6,7 @@ block content
 			img(v-if="sysid==1",src="/img/signEditor/zyz.png")
 		section(v-for="obj in signForm",v-bind:class='["section-type-"+obj.type]',v-if="obj.type!=20")
 			input.sign-txt(v-if="obj.type==1",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name",v-model:value="obj.value")
-			textarea.sign-area(v-if="obj.type==2",v-bind:placeholder="obj.context?obj.name+""+obj.context:'请输入'+obj.name",v-model:value="obj.value")
+			textarea.sign-area(v-if="obj.type==2",v-bind:placeholder="obj.context?obj.name+''+obj.context:'请输入'+obj.name",v-model:value="obj.value")
 			select.sign-select(v-if="obj.type==3",v-bind:placeholder="obj.context",v-model="obj.value")
 				option(disabled,value="",checked="checked",v-bind:value="obj.value") 请选择{{obj.name}}
 				option(v-for="opt,i in obj.option.split(',')",v-bind:value="opt") {{opt}}
