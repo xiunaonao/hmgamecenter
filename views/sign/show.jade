@@ -11,9 +11,9 @@ block content
 				option(disabled,value="",checked="checked",v-bind:value="obj.value") 请选择{{obj.name}}
 				option(v-for="opt,i in obj.option.split(',')",v-bind:value="opt") {{opt}}
 
-			// .valid-code(v-if="false && obj.type==20")
-			// 	input(type="text",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name")
-			// 	button(v-on:click="postCode()") 发送验证码
+			.valid-code(v-if="false && obj.type==20")
+				input(type="text",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name")
+				button(v-on:click="postCode()") 发送验证码
 		button.form-submit(v-on:click="submitForm()") 提交信息
 
 block footer
