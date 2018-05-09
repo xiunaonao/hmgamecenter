@@ -11,5 +11,5 @@ block content
 				//span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(obj.rows)") {{obj.rows[obj2]}}
 	
 block footer
-	script var sysid=!{id};var signData=JSON.parse('!{JSON.stringify(data)}');
+	script var sysid=!{id};
 	script(src="/js/signData.js")
