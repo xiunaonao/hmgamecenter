@@ -84,7 +84,7 @@ router.get('/form_execl',(req,res,next)=>{
 		// return;
 		var result = nodeExcel.execute(conf);
         res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-        res.setHeader("Content-Disposition", "attachment; filename=" + "transaction.xlsx");
+        res.setHeader("Content-Disposition", "attachment; filename=" + "表单.xlsx");
         res.end(result, 'binary');
 
 
