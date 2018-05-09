@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var api=require('./routes/api');
 var gameServer=require('./routes/gameServer');
 var sign=require('./routes/sign');
+var package=require('./package.json')
 var app = express();
 
 // view engine setup
@@ -24,11 +25,19 @@ app.use(cookieParser());
 // app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req,res,next)=>{
+	res.locals._v=package.version;
+	next();
+})
+
 app.use('/', indexRouter);
 app.use('/api',api);
 app.use('/users', usersRouter);
 app.use('/sign', sign);
 app.use('/gameServer',gameServer);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

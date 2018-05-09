@@ -45,4 +45,47 @@ router.get('/form_data',(req,res,next)=>{
 	});
 });
 
+router.get('/form_execl',(req,res,next)=>{
+	let id=req.query.id;
+	let nodeExcel = require('excel-export');
+	var conf = {};
+	database.query('formDataInfo',{sysid:parseInt(id)},(err,data)=>{
+		conf.cols=[]
+		conf.rows=new Array()
+		let first=[]
+
+		data.forEach((k,i)=>{
+			let keys=Object.keys(k.rows)
+			let rows=new Array()
+			keys.forEach((k2,j)=>{
+				console.log(first[j])
+				if(!first[j]){
+					first[j]=k2
+					conf.cols.push({
+						  caption: k2,
+		                  type: 'string',
+		                  width: 10
+					});
+				}
+				rows.push(k.rows[k2]);
+
+				
+			})
+			conf.rows.push(rows)
+
+		})
+
+		//res.json(conf);
+		//return;
+		var result = nodeExcel.execute(conf);
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+        res.setHeader("Content-Disposition", "attachment; filename=" + "transaction.xlsx");
+        res.end(result, 'binary');
+
+
+
+
+	});
+})
+
 module.exports = router;

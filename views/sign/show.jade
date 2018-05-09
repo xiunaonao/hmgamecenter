@@ -18,4 +18,4 @@ block content
 		.hm-alert-success(v-if="sysalert") {{sysalerttxt}}
 block footer
 	script var signData=JSON.parse('!{JSON.stringify(data)}');
-	script(src="/js/signShow.js?v=1")
+	script(src="/js/signShow.js?v=#{_v}")
