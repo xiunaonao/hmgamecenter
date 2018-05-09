@@ -3,7 +3,7 @@ extends ../signLayout
 block content
 	article#sign.sign-data
 		.sign-data-option
-			a(v-bind:href="/api/form_execl?id={sysid}",target="_blank") 导出为EXECL
+			a(v-bind:href="'/api/form_execl?id='+sysid",target="_blank") 导出为EXECL
 		ul
 			li(v-if="signData.length>0")
 				span.table-head(v-bind:title="obj2",v-if="obj2!='_id'",v-for="obj2,j in Object.keys(signData[0].rows)",style="") {{obj2}}
