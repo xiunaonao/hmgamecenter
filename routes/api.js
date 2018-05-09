@@ -50,6 +50,10 @@ router.get('/form_execl',(req,res,next)=>{
 	let nodeExcel = require('excel-export');
 	var conf = {};
 	database.query('formDataInfo',{sysid:parseInt(id)},(err,data)=>{
+		if(err){
+			res.json(err)
+			return
+		}
 		conf.cols=[]
 		conf.rows=new Array()
 		let first=[]
