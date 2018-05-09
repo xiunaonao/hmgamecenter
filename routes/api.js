@@ -74,8 +74,9 @@ router.get('/form_execl',(req,res,next)=>{
 			conf.rows.push(rows)
 
 		})
-
+		conf.data=data;
 		res.json(conf);
+
 		return;
 		var result = nodeExcel.execute(conf);
         res.setHeader('Content-Type', 'application/vnd.openxmlformats');
