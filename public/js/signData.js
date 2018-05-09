@@ -4,7 +4,8 @@ var vapp=new Vue({
 		sysid:sysid,
 		signData:signData,
 		signUrl:'/api/form_submit',
-		isValid:false
+		isValid:false,
+		//widthList:[0,0,0,0],
 	},
 	methods:{
 		postCode:function(){
@@ -35,9 +36,20 @@ var vapp=new Vue({
 
 			});
 		}
+		// totalWidth:function(){
+		// 	for(var i=0;i<this.signData.length;i++){
+		// 		var keys=Object.keys(this.signData[i].rows);
+		// 		for(var j=0;j<keys.length;j++){
+		// 			var width=(this.signData[i].rows[keys[j]]).length;
+		// 			if(this.widthList.length<j+1 || this.widthList[j]<width ){
+		// 				this.widthList[j]=width;
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 	},
 	mounted:function(){
-
+		//this.totalWidth();
 	}
 });

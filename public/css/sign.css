@@ -12,9 +12,12 @@
 
 .form-submit{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;border:0.01rem #008BCB solid ;background:#008BCB;border-radius:0.05rem;color:#FFF;}
 
-.sign-data>ul{width:12rem;}
-.sign-data>ul>li{height:0.4rem;line-height:0.4rem;}
-.sign-data>ul>li span{width:0.5rem;text-indent:0.1rem;}
+.sign-data{font-size:0.12rem;}
+.sign-data>ul{min-width:1200px;}
+.sign-data>ul>li{height:0.4rem;line-height:0.4rem;display:flex;}
+.sign-data>ul>li span{overflow:hidden;min-width:0.55rem;font-size:13px;display:inline-block;border-right:1px solid #CCC;border-bottom:1px solid #CCC;white-space:nowrap;text-align:center;}
+.sign-data>ul>li .table-head{line-height:0.4rem;}
+.sign-data>ul>li .table-content{line-height:0.14rem;height:0.14rem;}
 
 .sign-show-banner{width:3.75rem;}
 .sign-show-banner img{width:100%;}

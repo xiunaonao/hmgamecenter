@@ -9,8 +9,9 @@ html
     script(src="/js/vue-resource.js")
     script.
         const deviceWidth = document.documentElement.clientWidth;
-        const deviceFontSize = (deviceWidth / 375) * 100;
+        const deviceFontSize = ((deviceWidth / 375) * 100)>150?150:((deviceWidth / 375) * 100);
         document.querySelector("html").style.fontSize = deviceFontSize + 'px';
+
   body
 
     //header=title

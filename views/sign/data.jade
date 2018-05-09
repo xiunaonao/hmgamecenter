@@ -4,9 +4,9 @@ block content
 	article#sign.sign-data
 		ul
 			li(v-if="signData.length>0")
-				span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(signData[0].rows)") {{obj2}}
-			li(v-for="obj in Object.keys(signData)")
-				span {{obj.rows.}}
+				span.table-head(v-bind:title="obj2",v-if="obj2!='_id'",v-for="obj2,j in Object.keys(signData[0].rows)",style="") {{obj2}}
+			li(v-for="obj in signData")
+				span.table-content(v-bind:title="obj.rows[obj2]",v-for="obj2,j in Object.keys(obj.rows)",style="") {{obj.rows[obj2]}}
 				//span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(obj.rows)") {{obj2}}
 				//span(v-if="obj2!='_id'",v-for="obj2 in Object.keys(obj.rows)") {{obj.rows[obj2]}}
 	

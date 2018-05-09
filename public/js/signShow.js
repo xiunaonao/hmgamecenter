@@ -36,12 +36,14 @@ var vapp=new Vue({
 			}
 			var formObj={
 				sysid:this.sysid,
-				rows:{}
+				rows:{},
+				types:{}
 			};
 
 			for(var i=0;i<this.signForm.length;i++){
 				console.log(this.signForm[i].name);
 				formObj.rows[this.signForm[i].name]=this.signForm[i].value?this.signForm[i].value:'';
+				formObj.types[this.signForm[i].name]=this.signForm[i].type;
 			}
 			this.$http.post(this.signUrl,formObj).then(function(data){
 				if(typeof data.data=='string')
