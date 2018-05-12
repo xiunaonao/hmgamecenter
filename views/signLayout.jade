@@ -3,14 +3,15 @@ html
   head
     title= title
     meta(name="viewport",content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
-    link(rel="stylesheet",href="/css/main.css")
-    link(rel="stylesheet",href="/css/sign.css")
+    link(rel="stylesheet",href="/css/main.css?v=#{_v}")
+    link(rel="stylesheet",href="/css/sign.css?v=#{_v}")
     script(src="/js/vue.js")
     script(src="/js/vue-resource.js")
     script.
         const deviceWidth = document.documentElement.clientWidth;
-        const deviceFontSize = (deviceWidth / 375) * 100;
+        const deviceFontSize = ((deviceWidth / 375) * 100)>150?150:((deviceWidth / 375) * 100);
         document.querySelector("html").style.fontSize = deviceFontSize + 'px';
+
   body
 
     //header=title

@@ -22,21 +22,23 @@ router.get('/show', (req, res, next)=>{
 	database.query('formInfo',{id:parseInt(id)},(err,result)=>{
 		console.log(err);
 		console.log(result);
-		res.render('sign/show', { title: result[0].title ,data:result[0]});
+		res.render('sign/show', { title: (result.length>0?result[0].title:'') ,data:(result.length>0?result[0]:{})});
 	})
 	
 });
 
 router.get('/data',(req,res,next)=>{
 	let id=req.query.id;
-	database.query('formDataInfo',{sysid:parseInt(id)},(err,result)=>{
-		console.log(err);
-		console.log(result);
-		res.render('sign/data',{
-			id:id,
-			data:result
-		})
-	});
+	res.render('sign/data',{title:"报名数据",id:id});
+	// database.query('formDataInfo',{sysid:parseInt(id)},(err,result)=>{
+	// 	console.log(err);
+	// 	console.log(result);
+	// 	res.render('sign/data',{
+	// 		title:(result.length>0?result[0].title:''),
+	// 		id:id,
+	// 		data:result
+	// 	})
+	// });
 
 })
 

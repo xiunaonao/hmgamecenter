@@ -4,6 +4,7 @@
 .sign-editor>.section-type-2{height:1.5rem;}
 .sign-editor .add-signform{width:3.55rem;margin:0.05rem 0.1rem;height:0.3rem;border:solid 0.01rem #ccc;background:rgba(0,0,0,0);position:relative;}
 .sign-editor>section>aside{position:absolute;width:100%;height:0.4rem;text-align:right;}
+.sign-editor>section>aside a{padding-right:0.1rem;color:#CCC;}
 .sign-editor>section>input,.sign-editor>section>select,.sign-editor>section>textarea,.sign-editor>section>.valid-code>input{width:100%;border:0.01rem solid #CCC;height:0.4rem;text-indent:0.15rem;border-radius:0.05rem;background:#FFF;}
 .sign-editor>section>textarea{resize:none;height:1.5rem;box-sizing:border-box;padding:0.1rem 0.15rem;text-indent:0;}
 .sign-editor>section>.input-type-1{border-radius:0.05rem;}
@@ -12,9 +13,13 @@
 
 .form-submit{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;border:0.01rem #008BCB solid ;background:#008BCB;border-radius:0.05rem;color:#FFF;}
 
-.sign-data>ul{width:12rem;}
-.sign-data>ul>li{height:0.4rem;line-height:0.4rem;}
-.sign-data>ul>li span{width:0.5rem;text-indent:0.1rem;}
+.sign-data{font-size:0.12rem;}
+.sign-data>ul{width:1200px;border-left:1px solid #CCC;}
+.sign-data>ul>li{display:flex;}
+.sign-data>ul>li span{overflow:hidden;min-width:0.55rem;font-size:13px;display:inline-block;border-right:1px solid #CCC;border-bottom:1px solid #CCC;white-space:nowrap;text-align:center;}
+.sign-data>ul>li .table-head{line-height:0.4rem;border-top:1px solid #CCC;}
+.sign-data>ul>li .table-content{line-height:0.14rem;height:0.14rem;}
+.sign-data>.sign-data-option a{line-height:0.3rem;display: inline-block;text-decoration:none;color:#008BCB;}
 
 .sign-show-banner{width:3.75rem;}
 .sign-show-banner img{width:100%;}

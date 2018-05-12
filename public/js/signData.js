@@ -2,9 +2,10 @@ var vapp=new Vue({
 	el:"#sign",
 	data:{
 		sysid:sysid,
-		signData:signData,
-		signUrl:'/api/form_submit',
+		signData:[],
+		signUrl:'/api/form_data?id=',
 		isValid:false
+		//widthList:[0,0,0,0],
 	},
 	methods:{
 		postCode:function(){
@@ -31,13 +32,30 @@ var vapp=new Vue({
 				formObj.rows[this.signForm[i].name]=this.signForm[i].value?this.signForm[i].value:'';
 			}
 
-			this.$http.post(this.signUrl,formObj).then(function(data){
-
+			
+		},
+		getData:function(){
+			this.$http.get(this.signUrl+this.sysid).then(function(data){
+				if(typeof data.data == 'string')
+					data.data=JSON.parse(data.data);
+					this.signData=data.data.data;
 			});
 		}
+		// totalWidth:function(){
+		// 	for(var i=0;i<this.signData.length;i++){
+		// 		var keys=Object.keys(this.signData[i].rows);
+		// 		for(var j=0;j<keys.length;j++){
+		// 			var width=(this.signData[i].rows[keys[j]]).length;
+		// 			if(this.widthList.length<j+1 || this.widthList[j]<width ){
+		// 				this.widthList[j]=width;
+		// 			}
+		// 		}
+		// 	}
+		// }
 
 	},
 	mounted:function(){
-
+		this.getData()
+		//this.totalWidth();
 	}
 });
