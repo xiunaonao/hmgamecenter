@@ -1,0 +1,140 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport",content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
+    script.
+        const deviceWidth = document.documentElement.clientWidth;
+        const deviceFontSize = (deviceWidth / 375) * 100;
+        document.querySelector("html").style.fontSize = deviceFontSize + 'px';
+  body
+    style.
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+        .feedback_box{
+            width:100%;
+        }
+        .feedback_box table{
+            width:100%;
+        }
+        .fb_list{
+            width:100%;
+            float:left;
+            padding: 0.19rem 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .fb_title{
+            float:left;
+            margin-left:0.16rem;
+            font-size:0.13rem;
+            font-family:'Microsoft YaHei';
+            color:#000000;
+        }
+        .fb_list input,
+        .fb_list select{
+            float: left;
+            width: 65.6%;
+            border: none;
+            font-size: 0.13rem;
+            font-family: 'Microsoft YaHei';
+            color: #000000;
+        }
+        .fb_list input:focus,
+        .fb_list select:focus{
+            outline:none;
+        }
+        .fb_list_text{
+            padding:0;
+            border:none;
+        }
+        .fb_content{
+            float:left;
+            width:91%;
+            height:0.6rem;
+            padding:4.5%;
+            border:none;
+        }
+        .fb_img{
+            padding:0.19rem 0.1rem;
+            background-color: #F5F5F5;
+            font-size:0.13rem;
+            font-family:'Microsoft YaHei';
+            color:#000000;
+        }
+        .fb_img span{
+            float:right;
+        }
+        .fb_img_content{
+            width:91%;
+            padding:4.5%;
+        }
+        .fb_img_a{
+            display:block;
+            width:0.5rem;
+            height:0.5rem;
+            border:1px solid #cccccc;
+            text-align:center;
+            line-height:0.4rem;
+            font-size:0.4rem;
+            font-family:'Microsoft YaHei';
+            color:#1976D2;
+        }
+
+        .fb_submit{
+            display:block;
+            width: 2rem;
+            margin: 0.4rem auto 0;
+            padding: 0.18rem 0;
+            background-color: #1976D2;
+            border-radius:0.25rem;
+            text-align: center;
+            font-size: 0.15rem;
+            font-family: 'Microsoft YaHei';
+            color: #ffffff;
+            cursor:pointer;
+        }
+
+    div.feedback_box
+        table
+            tr
+                td
+                    div.fb_list
+                        span.fb_title 选择部门：
+                        select.fb_dept
+                            option(value='1') test1
+                            option(value='2') test2
+                            option(value='3') test3
+                            option(value='4') test4
+            tr
+                td
+                    div.fb_list
+                        span.fb_title 姓名：
+                        input.fb_name(type='text', placeholder='请输入您的姓名')
+            tr
+                td
+                    div.fb_list
+                        span.fb_title 电话：
+                        input.fb_tel(type='text', placeholder='请输入您的手机号')
+            tr
+                td
+                    div.fb_list.fb_list_text
+                        textarea.fb_content(placeholder='请填写您要建议的内容、最多输入500字')
+
+            tr
+                td
+                    div.fb_list.fb_list_text
+                        p.fb_img 请提供相关截图或照片（限5张）
+                            span.fb_img_num 0/5
+                        div.fb_img_content
+                            a.fb_img_a +
+
+        a.fb_submit 提交

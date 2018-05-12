@@ -22,4 +22,8 @@ router.get('/chessboard', function(req,res,next){
 	res.render('chess/chessboard',{title:'chess'});
 })
 
+router.get('/feedback', function(req,res,next){
+	res.render('feedback',{title:'feedback'});
+})
+
 module.exports = router;
