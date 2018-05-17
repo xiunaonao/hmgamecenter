@@ -1,2 +1,4 @@
 /node_modules
 data_config.js
+/uploaders_temp
+/public/temp/*
