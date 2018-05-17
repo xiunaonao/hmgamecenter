@@ -17,7 +17,20 @@ block content
 			//input.sign-txt(v-bind:placeholder="obj.context?obj.context:'未设置，点击编辑按钮进行编辑'")
 		button.add-signform(v-on:click="signForm.push({})") +添加新项
 
-		.sign-editor-menu
+		.sign-editor-menu(v-bind:style="{'-webkit-transform':edit_index>-1?'translate(0)':''}")
+			h5 编辑表单
+			i(v-if="edit_index>-1",v-on:click="cancelChoose") 收起 >
+			ul
+				li
+					input(type="text",placeholder="请输入名称(如:姓名)")
+					//p 如：姓名
+				li
+					input(type="text",placeholder="请输入描述(如:请输入姓名)")
+					//p 如:请输入姓名
+				li
+					select
+						option(value='-1') 请选择类型
+						option(value="1")
 
 
 block footer

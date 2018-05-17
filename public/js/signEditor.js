@@ -16,6 +16,10 @@ var vapp=new Vue({
 			obj.is_edit=1;
 			this.edit_index=ind;
 
+		},
+		cancelChoose:function(){
+			this.signForm[this.edit_index].is_edit=0;
+			this.edit_index=-1;
 		}
 	},
 	mounted:function(){
