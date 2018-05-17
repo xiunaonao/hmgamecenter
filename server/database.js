@@ -1,5 +1,8 @@
 var mongo=require('mongodb').MongoClient;
-var url='mongodb://localhost:27017/hm_db';
+var dbserver=require('../data_config').ip;
+console.log(dbserver)
+//dbserver='localhost'
+var url='mongodb://'+dbserver+':27017/hm_db';
 
 const _db=()=>{
 	var obj= {
@@ -7,6 +10,10 @@ const _db=()=>{
 			if(!database)
 				database='hm_db';
 			mongo.connect(url,(err,db)=>{
+				if(err){
+					console.log(err)
+					return;
+				}
 				var dbo=db.db(database);
 				callback(err,dbo,db);
 			});

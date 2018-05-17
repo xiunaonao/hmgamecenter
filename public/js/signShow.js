@@ -45,7 +45,8 @@ var vapp=new Vue({
 				formObj.rows[this.signForm[i].name]=this.signForm[i].value?this.signForm[i].value:'';
 				formObj.types[this.signForm[i].name]=this.signForm[i].type;
 			}
-			this.$http.post(this.signUrl,formObj).then(function(data){
+			//this.$http.post(this.signUrl,formObj).then(function(data){
+			axios.post(this.signUrl,formObj).then(function(data){
 				if(typeof data.data=='string')
 					data.data=JSON.parse(data.data);
 				if(data.data.success==1){

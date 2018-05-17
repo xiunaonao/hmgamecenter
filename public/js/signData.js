@@ -35,23 +35,11 @@ var vapp=new Vue({
 			
 		},
 		getData:function(){
-			this.$http.get(this.signUrl+this.sysid).then(function(data){
-				if(typeof data.data == 'string')
-					data.data=JSON.parse(data.data);
-					this.signData=data.data.data;
-			});
+			var t=this;
+			axios.get(this.signUrl+this.sysid).then(function(data){
+					t.signData=data.data.data;
+			})
 		}
-		// totalWidth:function(){
-		// 	for(var i=0;i<this.signData.length;i++){
-		// 		var keys=Object.keys(this.signData[i].rows);
-		// 		for(var j=0;j<keys.length;j++){
-		// 			var width=(this.signData[i].rows[keys[j]]).length;
-		// 			if(this.widthList.length<j+1 || this.widthList[j]<width ){
-		// 				this.widthList[j]=width;
-		// 			}
-		// 		}
-		// 	}
-		// }
 
 	},
 	mounted:function(){

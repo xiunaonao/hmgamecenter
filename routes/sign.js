@@ -4,16 +4,17 @@ var database=require('../server/database');
 
 /* GET home page. */
 router.get('/editor', (req, res, next) =>{
-	res.render('sign/editor', { title: '报名编辑器' });
 	let id=req.query.id;
 	if(id)
 		database.query('formInfo',{id:parseInt(id)},(err,result)=>{
 			console.log(err);
 			console.log(result);
-			res.render('sign/show', { title: '报名' ,data:result});
+			//res.render('sign/editor',{data:{name:'abc'},id:1})
+			//res.render('sign/show', { title: '报名' ,data:result});
+			res.render('sign/editor', { title: (result.length>0?result[0].title:'') ,data:(result.length>0?result[0]:({rows:[]}))});
 		})
 	else
-		res.render('sign/show',{title:''})
+		res.render('sign/editor',{title:'新建报名',data:{rows:[]}})
 });
 
 router.get('/show', (req, res, next)=>{
