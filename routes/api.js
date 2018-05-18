@@ -131,7 +131,7 @@ router.post('/upload',upload.any(),(req,res,next)=>{
 		fs.readFile(item.path,(err,data)=>{
 			fs.writeFile('.'+filename,data,(err)=>{
 				if(!err)
-					imgs.push(filename)
+					imgs.push(filename.replace('/public',''))
 				console.log(imgs)
 				if(index==req.files.length-1){
 					let json={};

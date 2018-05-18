@@ -1,23 +1,29 @@
 /*******editor*******/
-
-.sign-editor>section{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;}
+input[text],button,input[button],select{-webkit-appearance:none;}
+.sign-editor>section{min-height:0.4rem;line-height:0.4rem;width:3.75rem;margin:0;position:relative;}
 .sign-editor>.c>aside{border:solid #F00 1px!important;}
 .sign-editor>.section-type-2{height:1.5rem;}
 .sign-editor .add-signform{width:3.55rem;margin:0.05rem 0.1rem;height:0.3rem;border:solid 0.01rem #ccc;background:rgba(0,0,0,0);position:relative;}
 .sign-editor>section>aside{position:absolute;width:100%;height:100%;text-align:right;top:0;left:0;cursor:pointer;}
 .sign-editor>section>aside a{padding-right:0.1rem;color:#CCC;}
-.sign-editor>section>input,.sign-editor>section>select,.sign-editor>section>textarea,.sign-editor>section>.valid-code>input{width:100%;border:0.01rem solid #CCC;height:0.4rem;text-indent:0.15rem;border-radius:0.05rem;background:#FFF;}
+.sign-editor>section>input,.sign-editor>section>select,.sign-editor>section>textarea,.sign-editor>section>.valid-code>input{margin:0.05rem 0.1rem;width:3.55rem;border:0.01rem solid #CCC;height:0.4rem;text-indent:0.15rem;border-radius:0.05rem;background:#FFF;}
 .sign-editor>section>textarea{resize:none;height:1.5rem;box-sizing:border-box;padding:0.1rem 0.15rem;text-indent:0;}
 .sign-editor>section>.input-type-1{border-radius:0.05rem;}
+.sign-editor>section .sign-font{text-indent:0.15rem;}
+.sign-editor>section img{max-width:3.75rem;max-height:3.75rem;}
 
-.sign-editor>section>.valid-code>button{height:0.4rem;border:0.01rem solid #008BCB;color:#FFF;width:1rem;position:absolute;top:0;right:0;background:#008BCB;border-radius:0.05rem;}
+.sign-editor>section>.valid-code>button{height:0.4rem;border:0.01rem solid #008BCB;color:#FFF;width:1rem;position:absolute;top:0.05rem;right:0.05rem;background:#008BCB;border-radius:0.05rem;}
 
 .sign-editor-menu{position:fixed;right:0;top:0;width:2rem;background:#FFF;border-left:0.01rem solid #CCC;height: 100%;-webkit-transform:translateX(100%);-webkit-transition:all 0.5s;}
 .sign-editor-menu>i{position:absolute;top:0.0rem;right:0.05rem;color:#CCC;width: 0.6rem;text-align:right;padding:0.05rem;font-style: normal;}
 .sign-editor-menu>ul>li{height:0.4rem;list-style: none;margin-top:0.05rem;margin-left:0.05rem;}
-.sign-editor-menu>ul>li>input{border:0.01rem solid #CCC;border-radius:0.05rem;font-size:0.14rem;text-indent:0.1rem;height:0.35rem;width:1.85rem;float:left;box-sizing:border-box;}
+.sign-editor-menu>ul>li>input,.sign-editor-menu>ul>li>select{border:0.01rem solid #CCC;border-radius:0.05rem;font-size:0.14rem;text-indent:0.1rem;height:0.35rem;width:1.85rem;float:left;box-sizing:border-box;}
 .sign-editor-menu>ul>li>p{font-size:0.13rem;line-height:0.15rem;color:#CCC;text-indent:0.1rem;float:left;width: 100%;}
+
 .sign-editor-menu>h5{line-height:0.3rem;font-size:0.16rem;font-weight:100;text-align:left;border-bottom:0.01rem solid #CCC;text-indent:0.1rem;}
+.sign-editor-menu>h5>a{font-size:0.2rem;padding:0.05rem;}
+
+.loading-fixed{position:fixed;left:0;top:0;background:rgba(0,0,0,0.5);width:100%;height:100%;}
 
 .form-submit{min-height:0.4rem;line-height:0.4rem;width:3.55rem;margin:0.1rem 0.1rem;position:relative;border:0.01rem #008BCB solid ;background:#008BCB;border-radius:0.05rem;color:#FFF;}
 
