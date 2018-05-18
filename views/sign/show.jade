@@ -16,6 +16,8 @@ block content
 				button(v-on:click="postCode()") 发送验证码
 		button.form-submit(v-on:click="submitForm()") 提交信息
 		.hm-alert-success(v-if="sysalert") {{sysalerttxt}}
+
+		
 block footer
 	script var signData=JSON.parse('!{JSON.stringify(data)}');
 	script(src="/js/signShow.js?v=#{_v}")
