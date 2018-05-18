@@ -3,6 +3,11 @@ html
   head
     title= title
     meta(name="viewport",content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
+    script(src="/js/vue.js")
+    script(src="/js/vue-resource.js")
+    script(src="https://unpkg.com/vue-router/dist/vue-router.js")
+    script(src="/js/jquery-1.10.2.js")
+    script(src="/js/jquery.form.js")
     script.
         const deviceWidth = document.documentElement.clientWidth;
         const deviceFontSize = (deviceWidth / 375) * 100;
@@ -78,7 +83,27 @@ html
             width:91%;
             padding:4.5%;
         }
+
+        #img-wrapper{
+            float:left;
+        }
+        #img-wrapper div{
+            float:left;
+            margin-bottom:0.18rem;
+            max-width:0.5rem;
+            max-height:0.5rem;
+            overflow:hidden;
+            text-align:center;
+        }
+         #img-wrapper div:last-child{
+            margin-right:0rem;
+        }
+        #img-wrapper div img{
+            float:left;
+            height:0.5rem;
+        }
         .fb_img_a{
+            float:left;
             display:block;
             width:0.5rem;
             height:0.5rem;
@@ -88,6 +113,26 @@ html
             font-size:0.4rem;
             font-family:'Microsoft YaHei';
             color:#1976D2;
+        }
+        #addTextForm{
+            display:none;
+        }
+
+        .fb_img_submit{
+            display:block;
+            float:right;
+            margin-top:0.1rem;
+            padding:0.06rem 0.1rem;
+            border:1px solid #cccccc;
+            border-radius:5px;
+            text-align:center;
+            line-height:1.5;
+            font-size:0.18rem;
+            font-family:'Microsoft YaHei';
+            color:#333333;
+        }
+        .fb_img_submit:hover{
+            background-color: #1976D2;
         }
 
         .fb_submit{
@@ -104,17 +149,31 @@ html
             cursor:pointer;
         }
 
+        .alert_msg {
+            display: none;
+            width: 40%;
+            padding: 0.18rem 0;
+            position: fixed;
+            top: 36%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: black;
+            border-radius: 3px;
+            opacity: 0.5;
+            line-height: 1.2;
+            text-align: center;
+            font-size: 0.18rem;
+            color: #fff;
+        }
+        .alert_msg p{
+            padding:0 0.1rem;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
     div.feedback_box
         table
-            tr
-                td
-                    div.fb_list
-                        span.fb_title 选择部门：
-                        select.fb_dept
-                            option(value='1') test1
-                            option(value='2') test2
-                            option(value='3') test3
-                            option(value='4') test4
             tr
                 td
                     div.fb_list
@@ -134,9 +193,20 @@ html
                 td
                     div.fb_list.fb_list_text
                         p.fb_img 请提供相关截图或照片（限5张）
-                            span.fb_img_num 0/5
+                            span.fb_img_num {{flagNum}}/5
                         div.fb_img_content
-                            a.fb_img_a +
+                            div#img-wrapper()
+                            a.fb_img_a(v-on:click="change_input()") +
+                            form#addTextForm(v-on:change="setImg($event)")
 
-        a.fb_submit 提交
+
+        a.fb_submit(v-on:click="allSubmit()") 提交
+
+        div.alert_msg
+            p
+
+
+
+    
+    script(src="/js/img_upload.js")
 
