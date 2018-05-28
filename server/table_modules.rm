@@ -15,6 +15,7 @@ formInfo
 		}
 	],
 	"title" : "校友会志愿者报名表",
+	"desc":"",
 	"remark" : "",
 	"src" : "",
 	"createTime":"",

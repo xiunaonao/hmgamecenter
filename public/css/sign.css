@@ -1,4 +1,16 @@
 /*******editor*******/
+
+
+@font-face {
+  font-family: 'iconfont';  /* project id 683815 */
+  src: url('//at.alicdn.com/t/font_683815_brv9e5q4dozb0529.eot');
+  src: url('//at.alicdn.com/t/font_683815_brv9e5q4dozb0529.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_683815_brv9e5q4dozb0529.woff') format('woff'),
+  url('//at.alicdn.com/t/font_683815_brv9e5q4dozb0529.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_683815_brv9e5q4dozb0529.svg#iconfont') format('svg');
+}
+
+
 input[text],button,input[button],select{-webkit-appearance:none;}
 .sign-editor>section{min-height:0.4rem;line-height:0.4rem;width:3.75rem;margin:0;position:relative;}
 .sign-editor>.c>aside{border:solid #F00 1px!important;}
@@ -20,8 +32,26 @@ input[text],button,input[button],select{-webkit-appearance:none;}
 .sign-editor-menu>ul>li>input,.sign-editor-menu>ul>li>select{border:0.01rem solid #CCC;border-radius:0.05rem;font-size:0.14rem;text-indent:0.1rem;height:0.35rem;width:1.85rem;float:left;box-sizing:border-box;}
 .sign-editor-menu>ul>li>p{font-size:0.13rem;line-height:0.15rem;color:#CCC;text-indent:0.1rem;float:left;width: 100%;}
 
+.sign-editor-menu>ul>li>.sign-text-align{width:1.85rem;height:0.35rem;}
+.sign-editor-menu .sign-text-align>a{font-family:"iconfont";width:30%;height:0.35rem;float:left;margin-left:0.05rem;text-align:center;line-height:0.35rem;font-size:0.2rem;
+	border:0.01rem solid #CCC;border-radius:0.05rem;}
+.sign-editor-menu .sign-text-align>a:first-child{margin-left:0;}
+
+.sign-editor-menu .sign-slider{position:relative;width:1.85rem;height:0.35rem;}
+.sign-editor-menu .sign-slider label{width:100%;position:absolute;height:0.01rem;background:#CCC;top:50%;}
+.sign-editor-menu .sign-slider a{font-family:"iconfont";font-size:0.13rem;width:0.2rem;height:0.2rem;border-radius:0.02rem;border:solid #CCC 0.01rem;
+	background:#FFF;color:#CCC;position:absolute;top:0.05rem;line-height:0.2rem;text-align:center;}
+
 .sign-editor-menu>h5{line-height:0.3rem;font-size:0.16rem;font-weight:100;text-align:left;border-bottom:0.01rem solid #CCC;text-indent:0.1rem;}
 .sign-editor-menu>h5>a{font-size:0.2rem;padding:0.05rem;}
+.sign-editor-btn{position:absolute;width:0.2rem;height:0.2rem;line-height:0.2rem;left:0.2rem;top:-0.4rem;border-radius:0.2rem;-webkit-transition:all 0.25s;
+	color:#FFF;text-align:center;background:url(/img/signEditor/菜单.png) #fff center/0.15rem no-repeat;border:#d81e06 0.01rem solid;}
+.sign-editor-btn-c{background-image:url(/img/signEditor/向下2.png);-webkit-transform:translateY(125%);}	
+.sign-editor-system{position:fixed;top:100%;width:100%;height:auto;background:#FFF;border-top:0.01rem #d81e06 solid;-webkit-transition:all 0.25s;padding-top: 0.1rem;}
+.sign-editor-system>p{line-height:0.3rem;}
+.sign-editor-system>p>*{width:3.55rem;margin:0.05rem 0.1rem;border:0.01rem solid #d81e06;height:0.4rem;text-indent:0.15rem;border-radius:0.05rem;}
+.sign-editor-system>.system-option-button>button{width:0.4rem;height:0.4rem;color:#FFF;background:#d81e06;border-radius:0.4rem;font-family:"iconfont";text-align:center;
+	font-size:0.25rem;line-height:0.4rem;text-indent:0;}
 
 .loading-fixed{position:fixed;left:0;top:0;background:rgba(0,0,0,0.5);width:100%;height:100%;}
 
@@ -34,6 +64,8 @@ input[text],button,input[button],select{-webkit-appearance:none;}
 .sign-data>ul>li .table-head{line-height:0.4rem;border-top:1px solid #CCC;}
 .sign-data>ul>li .table-content{line-height:0.14rem;height:0.14rem;}
 .sign-data>.sign-data-option a{line-height:0.3rem;display: inline-block;text-decoration:none;color:#008BCB;}
+
+
 
 .sign-show-banner{width:3.75rem;}
 .sign-show-banner img{width:100%;}

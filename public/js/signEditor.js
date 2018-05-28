@@ -2,11 +2,17 @@ var vapp=new Vue({
 	el:"#sign",
 	data:{
 		signForm:[],
+		signTitle:'',
+		signDesc:'',
 		sysid:signData.id,
 		sysid:0,
 		edit_index:-1,
 		loading:false,
-		loading_txt:''
+		saveOpen:false,
+		loading_txt:'',
+		isFontMove:false,
+	},
+	directives:{
 	},
 	methods:{
 		show_editor:function(obj,ind){
@@ -36,6 +42,8 @@ var vapp=new Vue({
 					option:'',
 					notnull:0,
 					is_edit:1,
+					style:this.initStyle()
+					
 				}
 			)
 			this.edit_index=this.signForm.length-1;
@@ -55,9 +63,49 @@ var vapp=new Vue({
 				if(data.data.success){
 					scope.signForm[scope.edit_index].src=data.data.url;
 
+
 				}
 
 			});
+		},
+		signMoveStart:function(name,event){
+			this.isFontMove=true;
+			this.moveName=name;
+			var dom=this.signForm[this.edit_index];
+			var moveX=parseFloat(dom.style[name]);
+			this.moveX=(event.touches[0].clientX)-moveX*deviceFontSize;
+		},
+		signMove:function(name,event){
+			
+			if(this.isFontMove && name==this.moveName){
+				var dom=this.signForm[this.edit_index];
+				var v=(event.changedTouches[0].clientX-this.moveX)/deviceFontSize;
+				if(v>0 && v<1.65){
+					dom.style[name]=v+'rem';
+					if(name=="fontsize")
+						if(dom.context.length*(v+0.02)<3.75 && v<0.38)
+							dom.style["line-height"]=0.38+'rem';
+						else
+							dom.style["line-height"]=v+0.02+'rem';
+					if(name=="margin-top"){
+						dom.style["margin-bottom"]=v+'rem';
+					}
+				}
+			}
+		},
+		signMoveEnd:function(name,event){
+			this.isFontMove=false;
+			this.moveName="";
+		},
+		initStyle:function(obj){
+			return {
+				"color":'#333',
+				"text-align":"center",
+				"font-size":"0.13rem",
+				"line-height":"0.4rem",
+				"margin-top":"0rem",
+				"margin-bottom":"0rem",
+			}
 		}
 	},
 	mounted:function(){
@@ -69,7 +117,9 @@ var vapp=new Vue({
 				if(!signData.rows[i].notnull)
 					signData.rows[i].notnull=0;
 				if(!signData.row[i].style){
-					signData.rows[i].style={};
+					signData.rows[i].style=this.initStyle();
+
+					;
 				}
 				this.signForm.push(signData.rows[i]);
 			}

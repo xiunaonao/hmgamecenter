@@ -13,7 +13,7 @@ block content
 			.valid-code(v-if="obj.type==20")
 				input(type="text",v-bind:placeholder="obj.context?obj.context:'请输入'+obj.name")
 				button(v-on:click="postCode()") 发送验证码
-			p.sign-font(v-if="obj.type==6") {{obj.context}}
+			p.sign-font(v-if="obj.type==6",v-bind:style="obj.style") {{obj.context}}
 			image(v-if="obj.type==5",v-bind:src="obj.src")
 
 			aside(v-on:click="show_editor(obj,i)")
@@ -58,7 +58,29 @@ block content
 				li(v-if="signForm[edit_index].type==6")
 					input(type="color",placeholder="字体颜色",v-model="signForm[edit_index].style.color")
 				li(v-if="signForm[edit_index].type==6")
+					.sign-text-align
+						a.iconfont(v-bind:style='{color:(signForm[edit_index].style["text-align"]=="left"?"#333":"#CCC")}',v-on:click='signForm[edit_index].style["text-align"]="left"') &#xe662;
+						a.iconfont(v-bind:style='{color:(signForm[edit_index].style["text-align"]=="center"?"#333":"#CCC")}',v-on:click='signForm[edit_index].style["text-align"]="center"') &#xe661;
+						a.iconfont(v-bind:style='{color:(signForm[edit_index].style["text-align"]=="right"?"#333":"#CCC")}',v-on:click='signForm[edit_index].style["text-align"]="right"') &#xe663;
+				li(v-if="signForm[edit_index].type==6")
+					.sign-slider
+						label 
+						a.iconfont(v-bind:style="{transform:'translateX('+signForm[edit_index].style['font-size']+')'}",v-on:touchstart="signMoveStart('font-size',$event)",v-on:touchmove="signMove('font-size',$event)",v-on:touchend="signMoveEnd('font-size',$event)") &#xe660;
+				li
+					.sign-slider
+						label
+						a.iconfotn(v-bind:style="{transform:'translateX('+signForm[edit_index].style['margin-top']+')'}",v-on:touchstart="signMoveStart('margin-top',$event)",v-on:touchmove="signMove('margin-top',$event)",v-on:touchend="signMoveEnd('margin-top',$event)") &#xe6ee;
 
+		.sign-editor-system(v-bind:style="{transform:(saveOpen?'translateY(-100%)':'')}")
+			div(v-bind:class="['sign-editor-btn'+(saveOpen?' sign-editor-btn-c':'')]",v-on:click="saveOpen=(!saveOpen)")
+			p
+				input.sign-editor-title(placeholder="请输入表单标题",v-model="signTitle")
+			p
+				input.sign-editor-desc(placeholder="请输入表单详细描述",v-model="signDesc")
+			p.system-option-button
+				button.iconfont &#xe62d;
+				button.iconfont &#xe681;
+			//input.sign-editor-remark(placeholder="请输入表单备注")
 		.loading-fixed(v-if="loading")
 			p {{loading_txt}}
 block footer
