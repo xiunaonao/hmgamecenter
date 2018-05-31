@@ -45,6 +45,18 @@ app.use('/', indexRouter);
 app.use('/api',api);
 app.use('/users', usersRouter);
 app.use('/sign', sign);
+app.use('/gameServer',(req,res,next)=>{
+	if(req.cookies && req.cookies["hm_user"]){
+		next();
+		return;
+	}
+	if(req.query.code){
+		next();
+		return;
+	}
+	res.redirect(`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13b573fe3208da3c&redirect_uri=http%3a%2f%2fgame.123zou.com%2fgameServer%2fchess&response_type=code&scope=snsapi_userinfo&state=STATE&connect_redirect=1#wechat_redirect`)
+	
+})
 app.use('/gameServer',gameServer);
 
 

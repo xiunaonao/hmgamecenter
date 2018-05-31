@@ -91,10 +91,10 @@ block content
 		}
 
 	div.content_box
-		div.top
-			img.top_img(src='/img/test_icon.png')
+		#chess_index.top
+			img.top_img(src='#{data.headimgurl}')
 			p.top_hi Hi,
-				span.hi_name 张晓明
+				span.hi_name=data.nickname
 				br
 				span.hi_down 欢迎来到中国象棋！
 			p.top_right 胜率 100%
@@ -107,4 +107,8 @@ block content
 
 		a.bottom_a(href='room')
 			img.bottom_img(src='/img/首页/进入游戏.png')
+	script.
+		var app=new Vue({
+			el:'#chess_index'
+		});
 
