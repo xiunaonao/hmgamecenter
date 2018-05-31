@@ -27,7 +27,7 @@ router.get('/chess', function(req,res,next){
 				console.log('---------------------用户信息------------------')
 				console.log(data)
 				if(data.errcode){
-					res.json({success:false});
+					res.json({success:falseuser});
 					return;
 				}
 				res.cookie('hm_user',JSON.stringify(data))
