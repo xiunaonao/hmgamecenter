@@ -45,7 +45,7 @@ const _db=()=>{
 						callback(err2,result);
 						return;
 					}
-					console.log(res);
+					//console.log(res);
 					callback(err2,res);
 					db.close();
 				});
@@ -58,13 +58,13 @@ const _db=()=>{
 					return;
 				}
 				let updateStr = {$set: rows};
-				dbo.collection(table).updateMany(updateStr,(err2,res)=>{
+				dbo.collection(table).updateMany(where,updateStr,(err2,res)=>{
 					if(err2){
-						callback(err2,result);
+						callback(err2,res.result);
 						return;
 					}
-					console.log(res);
-					callback(res);
+					//console.log(res);
+					callback(err2,res.result);
 					db.close();
 				});
 			});

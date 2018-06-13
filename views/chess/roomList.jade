@@ -282,7 +282,11 @@ block content
 
 
 
-
+		script var user_name='#{data.nickname}'
+		script var user_id='#{data.openid}'
+		script var user_head='#{data.headimgurl}'
+		script(src="/socket.io/socket.io.js")
+		script(src="/js/chess/server.js")
 
 
 

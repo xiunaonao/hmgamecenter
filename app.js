@@ -13,8 +13,6 @@ var sign=require('./routes/sign');
 var package=require('./package.json')
 var app = express();
 
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

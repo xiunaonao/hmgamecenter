@@ -1,0 +1,288 @@
+
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration:none;
+}
+li{
+	list-style:none;
+}
+
+html,body{
+	height:100%;
+}
+.content_box{
+	min-height:100%;
+	/*padding:0 0.25rem;*/
+	background:url(/img/背景.jpg);
+}
+
+.top{
+	width:100%;
+	padding-top:0.25rem;
+}
+.top:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.top_a{
+	width:0.3rem;
+	height:0.3rem;
+	float:left;
+	margin-left: 0.2rem;
+}
+.back_img{
+	display:block;
+	width:100%;
+}
+
+.top_player{
+	float:right;
+	margin-right:0.2rem;
+}
+.top_player:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+.player_icon{
+	display:block;
+	width:0.5rem;
+	float:right;
+	border-radius:50%;
+}
+.player_name{
+	float:right;
+	margin:0.12rem 0.15rem 0 0;
+	text-align:right;
+}
+.p_name{
+	font-size:0.13rem;
+	font-family:'Microsoft YaHei';
+	color:#FFD9AE;
+}
+.p_word,
+.p_time{
+	font-size:0.13rem;
+	font-family:'Microsoft YaHei';
+	color:#ABC458;
+}
+.p_word{
+	padding-right:0.15rem;
+}
+.play_state{
+	clear:both;
+	float:right;
+	margin-top:0.08rem;
+}
+.play_state:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+.play_state img{
+	display:inline-block;
+	width:0.47rem;
+	float:right;
+	margin-left:0.15rem;
+}
+
+.chessboard{
+	width:100%;
+	position:relative;
+}
+.chess_bg{
+	display:block;
+	width:100%;
+}
+.pieces{
+	width:0.28rem;
+	height:0.3rem;
+	background:url(/img/棋子/阴影.png);
+	background-size:100% 100%;
+	position:absolute;
+	z-index:99;
+}
+.pieces img{
+	display:block;
+	width:0.2rem;
+	height:0.2rem;
+	margin:0.01rem 0 0 0.03rem;
+}
+.block01{
+	top:0.22rem;
+	left:0.32rem;
+}
+.block02{
+	top:0.22rem;
+	left:0.61rem;
+}
+.block03{
+	top:0.22rem;
+	left:0.92rem;
+}
+.block04{
+	top:0.22rem;
+	left:1.21rem;
+}
+.block05{
+	top:0.22rem;
+	left:1.51rem;
+}
+.block06{
+	top:0.22rem;
+	left:1.79rem;
+}
+.block07{
+	top:0.22rem;
+	left:2.08rem;
+}
+.block08{
+	top:0.22rem;
+	left:2.37rem;
+}
+.block09{
+	top:0.22rem;
+	left:2.67rem;
+}
+.block11{
+	top:0.83rem;
+	left:0.61rem;
+}
+.block12{
+	top:0.83rem;
+	left:2.37rem;
+}
+.block21{
+	top:1.13rem;
+	left:0.32rem;
+}
+.block22{
+	top:1.13rem;
+	left:0.92rem;
+}
+.block23{
+	top:1.13rem;
+	left:1.51rem;
+}
+.block24{
+	top:1.13rem;
+	left:2.08rem;
+}
+.block25{
+	top:1.13rem;
+	left:2.67rem;
+}
+.red01{
+	bottom:0.37rem;
+	left:0.32rem;
+}
+.red02{
+	bottom:0.37rem;
+	left:0.61rem;
+}
+.red03{
+	bottom:0.37rem;
+	left:0.92rem;
+}
+.red04{
+	bottom:0.37rem;
+	left:1.21rem;
+}
+.red05{
+	bottom:0.37rem;
+	left:1.51rem;
+}
+.red06{
+	bottom:0.37rem;
+	left:1.79rem;
+}
+.red07{
+	bottom:0.37rem;
+	left:2.08rem;
+}
+.red08{
+	bottom:0.37rem;
+	left:2.37rem;
+}
+.red09{
+	bottom:0.37rem;
+	left:2.67rem;
+}
+.red11{
+	bottom:0.96rem;
+	left:0.61rem;
+}
+.red12{
+	bottom:0.96rem;
+	left:2.37rem;
+}
+.red21{
+	bottom:1.25rem;
+	left:0.32rem;
+}
+.red22{
+	bottom:1.25rem;
+	left:0.92rem;
+}
+.red23{
+	bottom:1.25rem;
+	left:1.51rem;
+}
+.red24{
+	bottom:1.25rem;
+	left:2.08rem;
+}
+.red25{
+	bottom:1.25rem;
+	left:2.67rem;
+}
+
+.bottom{
+	width:100%;
+}
+.bottom:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+.bot_icon{
+	display:block;
+	width:0.5rem;
+	float:left;
+	border-radius:50%;
+	margin-left: 0.2rem;
+}
+.bot_name{
+	float:left;
+	margin:0.12rem 0 0 0.15rem;
+}
+.p_name_bot{
+	font-size:0.13rem;
+	font-family:'Microsoft YaHei';
+	color:#FFD9AE;
+}
+.p_word_bot,
+.p_time_bot{
+	font-size:0.13rem;
+	font-family:'Microsoft YaHei';
+	color:#ABC458;
+}
+.p_word_bot{
+	margin-right:0.15rem;
+}
+.bot_state{
+	width:1rem;
+	float:right;
+	margin-right: 0.2rem;
+}
+.bot_state img{
+	display:block;
+	width:100%;
+}
+
+
+#cav{margin-left:0.075rem;}
