@@ -158,18 +158,19 @@ let _socket={
 						data.winplayer=win_player[socket.id]?players_detail[socket.id].openid:players_detail[ready_players[socket.id]].openid
 						db.update('gameAttackInfo',data,{"_id":players_detail[socket.id].attackid[0]},(err,result)=>{
 							console.log('获取游戏结果')
-							console.log(err)
 							//console.log(result)
 							db.query('userInfo',{"openid":players_detail[socket.id].openid},(err,result)=>{
 								var win_c=result[0].win_count;
 								var match_c=result[0].match_count;
 								db.update('userInfo',{"win_count":win_player[socket.id]?(win_c+1):win_c,"match_count":match_c+1},{"openid":players_detail[socket.id].openid},(err,result)=>{
-									
+									console.log('胜利的玩家');
+									console.log(result);
 									db.query('userInfo',{"openid":players_detail[ready_players[socket.id]].openid},(err,result)=>{
 										var win_c=result[0].win_count;
 										var match_c=result[0].match_count;
 										db.update('userInfo',{"win_count":win_player[ready_players[socket.id]]?(win_c+1):win_c,"match_count":match_c+1},{"openid":players_detail[ready_players[socket.id]].openid},(err,result)=>{
 											//console.log(result);
+											console.log('游戏结束');
 											var em=ready_players[socket.id]
 											
 											delete win_player[em]

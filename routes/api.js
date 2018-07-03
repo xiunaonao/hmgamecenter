@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var database=require('../server/database');
 var fs=require('fs');
+var request=require('request')
 
 var multer=require("multer")
 var upload=multer({ dest: 'uploads_temp/' })
@@ -66,6 +67,54 @@ router.get('/form_data',(req,res,next)=>{
 			data
 		})
 	});
+})
+
+
+router.get('/out_execl_hm',(req,res,next)=>{
+	let url=req.query.url
+	let nodeExcel = require('excel-export');
+	url=url.replace(/_/g,'&')
+	console.log(url)
+	var conf = {};
+	if(!url){
+		res.json({success:false})
+		return;
+	}
+	request(url,(err,resp,body)=>{
+		let data=JSON.parse(body)
+		let rows=data.Data.Rows
+		conf.cols=[]
+		conf.rows=new Array()
+		let first=[]
+		
+		for(let i=0;i<rows.length;i++){
+			let keys=i
+			let _rows=new Array()
+			for(let j=0;j<rows[i].Cells.length;j++){
+				if(!first[j]){
+					first[j]=j+1
+					conf.cols.push({
+						capton:j+1,
+						type:'string',
+						width:20
+					})
+				}
+				_rows.push(rows[i].Cells[j].Value)
+			}
+			//console.log(rows)
+			conf.rows.push(_rows)
+
+		}
+		//console.log(conf.rows)
+		//return;
+		var result = nodeExcel.execute(conf);
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+        res.setHeader("Content-Disposition", "attachment; filename=" + "formdata.xlsx");
+        res.end(result, 'binary');
+
+
+	})
+
 })
 
 router.get('/form_execl',(req,res,next)=>{

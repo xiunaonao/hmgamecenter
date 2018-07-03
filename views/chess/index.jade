@@ -97,7 +97,7 @@ block content
 				span.hi_name=data.nickname
 				br
 				span.hi_down 欢迎来到中国象棋！
-			p.top_right='胜率'+((data.win_count/date.match_count)*100)+'%'
+			p.top_right='胜率'+((data.win_count/data.match_count)*100)+'%'
 
 		div.main
 			div.main_center
@@ -105,7 +105,7 @@ block content
 
 		img.bottom_text(src='/img/首页/bottom_text.png')
 
-		a.bottom_a(href='room')
+		a.bottom_a(href='chessboard')
 			img.bottom_img(src='/img/首页/进入游戏.png')
 	script.
 		var app=new Vue({
