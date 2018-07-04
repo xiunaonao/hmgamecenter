@@ -97,7 +97,8 @@ block content
 				span.hi_name=data.nickname
 				br
 				span.hi_down 欢迎来到中国象棋！
-			p.top_right='胜率'+((data.win_count/data.match_count)*100)+'%'
+			//p.top_right='胜率'+((data.win_count/data.match_count)*100)+'%'
+			p.top_right=data.match_count
 
 		div.main
 			div.main_center

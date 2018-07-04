@@ -26,17 +26,18 @@ router.get('/chess', function(req,res,next){
 						res.json({success:false});
 						return;
 					}
-					callback()
+					callback(result[0])
 				})
 			}else{
-				callback()
+				callback(result[0])
 			}
 		})
 	}
 	if(req.cookies["hm_user"]){
 		let data=JSON.parse(req.cookies['hm_user'])
-		rule_openid(data,()=>{
-			res.render('chess/index',{data})
+		rule_openid(data,(result)=>{
+			console.log(result)
+			res.render('chess/index',{data,result})
 		})
 		
 	}
