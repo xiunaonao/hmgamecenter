@@ -49,7 +49,7 @@ var _SERVER=function(){
 	//var user=JSON.stringify
 	var obj={
 		connect:function(){
-			socket=io.connect('http://192.168.5.152:3000/');
+			socket=io.connect('/');
 		},
 		matchOver:function(win,callback){
 			clearInterval(timeTotal);
