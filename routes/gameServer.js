@@ -55,7 +55,13 @@ router.get('/chess', function(req,res,next){
 				var times=new Date(new Date().setDate(new Date().getDate()+7));
 				console.log(times);
 				res.cookie('hm_user',JSON.stringify(data),{expires:times,httpOnly:true})
-				res.render('chess/index',{data})
+				rule_openid(data,(result)=>{
+					console.log('检测用户')
+					console.log(result)
+					res.render('chess/index',{data,result})
+
+				})
+				//res.render('chess/index',{data})
 			})
 		})
 	}
